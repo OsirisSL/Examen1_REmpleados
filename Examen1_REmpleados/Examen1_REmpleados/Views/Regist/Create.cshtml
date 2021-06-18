@@ -1,0 +1,103 @@
+﻿
+@model Examen1_REmpleados.Models.Regist
+
+@{
+    ViewData["Title"] = "Registrar Empleado";
+
+}
+
+<h2>Registrar</h2>
+
+
+<div class="row">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row mb-2">
+            <label asp-for="RegistApellido" class="col-sm-2 col-form-label"></label>
+            <div>
+                <input asp-for="RegistApellido" class="form-control">
+                <span asp-validation-for="RegistApellido" class="text-danger"></span>
+            </div>
+
+            <label asp-for="RegistTelefono" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+                <input asp-for="RegistTelefono" class="form-control">
+                <span asp-validation-for="RegistTelefono" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <div class="row mb-2">
+            <label asp-for="RegistNombre" class="col-sm-2 col-form-label"></label>
+            <div>
+                <input asp-for="RegistNombre" class="form-control">
+                <span asp-validation-for="RegistNombre" class="text-danger"></span>
+            </div>
+
+            <label asp-for="RegistCelular" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+                <input asp-for="RegistCelular" class="form-control">
+                <span asp-validation-for="RegistCelular" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <div class="row mb-2">
+            <label asp-for="RegistApodo" class="col-sm-2 col-form-label"></label>
+            <div>
+                <input asp-for="RegistApodo" class="form-control">
+                <span asp-validation-for="RegistApodo" class="text-danger"></span>
+            </div>
+
+            <label asp-for="RegistFax" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+                <input asp-for="RegistFax" class="form-control">
+                <span asp-validation-for="RegistFax" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <div class="row mb-2">
+            <label asp-for="RegistDireccion" class="col-sm-2 col-form-label"></label>
+            <div>
+                <input asp-for="RegistDireccion" class="form-control">
+                <span asp-validation-for="RegistDireccion" class="text-danger"></span>
+            </div>
+
+            <label asp-for="RegistEmail" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+                <input asp-for="RegistEmail" class="form-control">
+                <span asp-validation-for="RegistEmail" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <div class="row mb-2">
+            <label asp-for="RegistCPostal" class="col-sm-2 col-form-label"></label>
+            <div>
+                <input asp-for="RegistCPostal" class="form-control">
+                <span asp-validation-for="RegistCPostal" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <label asp-for="RegistObsrvaciones" class="col-sm-2 col-form-label"></label>
+            
+            <textarea class="form-control" rows="3" asp-for="RegistObsrvaciones"></textarea>
+                <span asp-validation-for="RegistObsrvaciones" class="text-danger"></span>
+           
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Guardar" class="btn btn-outline-success" />
+            <a asp-action="Index" class="btn btn-warning"><i class="fas fa-exchange-alt"></i> Regresar</a>
+        </div>
+    </form>
+
+    </div>
+
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

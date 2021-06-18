@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Examen1_REmpleados.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,7 @@ namespace Examen1_REmpleados.Data
             : base(options)
         {
         }
+
+        public DbSet<Regist> Registros { get; set; }
     }
 }

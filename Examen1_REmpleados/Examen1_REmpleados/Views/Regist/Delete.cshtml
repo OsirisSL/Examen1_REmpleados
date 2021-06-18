@@ -1,0 +1,97 @@
+﻿@model Examen1_REmpleados.Models.Regist
+
+@{
+    ViewData["Title"] = "Borrar Registro";
+}
+
+<h2>Borrar</h2>
+<h3>Esta seguro de eliminar este registro</h3>
+
+<div>
+    <h4>Registro</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RegistId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistApellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RegistApellido)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistNombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RegistNombre)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistApodo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RegistApodo)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistDireccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RegistDireccion)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistCPostal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RegistCPostal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistTelefono)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RegistTelefono)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistCelular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RegistCelular)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistFax)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RegistFax)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistEmail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RegistEmail)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistObsrvaciones)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RegistObsrvaciones)
+        </dd>
+
+    </dl>
+</div>
+
+<div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="RegistId" />
+        <input type="submit" class="btn btn-danger" value="Borrar" />
+        <a asp-action="Index" class="btn btn-warning"><i class="fas fa-exchange-alt"></i> Regresar</a>
+    </form>
+</div>

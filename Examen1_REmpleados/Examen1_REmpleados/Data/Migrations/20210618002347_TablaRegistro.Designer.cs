@@ -4,14 +4,16 @@ using Examen1_REmpleados.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Examen1_REmpleados.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210618002347_TablaRegistro")]
+    partial class TablaRegistro
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,9 +29,7 @@ namespace Examen1_REmpleados.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("RegistApellido")
-                        .IsRequired()
-                        .HasMaxLength(70)
-                        .HasColumnType("nvarchar(70)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegistApodo")
                         .HasColumnType("nvarchar(max)");
@@ -41,9 +41,7 @@ namespace Examen1_REmpleados.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("RegistDireccion")
-                        .IsRequired()
-                        .HasMaxLength(70)
-                        .HasColumnType("nvarchar(70)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegistEmail")
                         .HasColumnType("nvarchar(max)");
@@ -52,9 +50,7 @@ namespace Examen1_REmpleados.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegistNombre")
-                        .IsRequired()
-                        .HasMaxLength(70)
-                        .HasColumnType("nvarchar(70)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RegistObsrvaciones")
                         .HasColumnType("nvarchar(max)");

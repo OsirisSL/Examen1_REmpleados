@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Examen1_REmpleados.Models.Regist>
+
+@{
+    ViewData["Title"] = "Registros";
+}
+
+
+
+<h2>Lista de Registros de Empleados</h2>
+
+<div class="row">
+    <div class="col-auto">
+        <input type="text" class="form-control-plaintext" id="txt-search" placeholder="Buscar..." />
+    </div>
+    <div class="col-auto">
+        <a class="btn btn-outline-info" onclick="Regists_search()" id="search-link"><i class="fas fa-search-plus"></i></a>
+        
+    </div>
+</div>
+
+<div class="row">
+    <table class="table  table table-hover table-responsive">
+        <thead>
+            <tr class="table-info">
+
+
+
+                <th> @Html.DisplayNameFor(model => model.RegistNombre)</th>
+
+                <th> @Html.DisplayNameFor(model => model.RegistApodo)</th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.RegistDireccion)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.RegistTelefono)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.RegistCelular)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.RegistEmail)
+                </th>
+
+                <th>
+                   
+                </th>
+            </tr>
+
+        </thead>
+        <tbdody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@Html.DisplayFor(modelItem => item.RegistNombre)
+                    <td>@Html.DisplayFor(modelItem => item.RegistApodo)
+                    <td>@Html.DisplayFor(modelItem => item.RegistDireccion)
+                    <td>@Html.DisplayFor(modelItem => item.RegistTelefono)
+                    <td>@Html.DisplayFor(modelItem => item.RegistCelular)
+                    <td>@Html.DisplayFor(modelItem => item.RegistEmail)
+
+                    <td>
+                        <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.RegistId"><i class="fas fa-user-edit"></i> Editar</a>
+                        <a asp-action="Details" class="btn btn-outline-info" asp-route-id="@item.RegistId"><i class="fas fa-info-circle"> Detalles</i></a>
+                        <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.RegistId"><i class="fas fa-trash-alt"></i> Borrar</a>
+                    </td>
+                </tr>
+                
+            }
+        </tbdody>
+    </table>
+</div>
+<p>
+    <a asp-action="Create" class="btn btn-outline-secondary"><i class="fas fa-ad"></i> Nuevo Registro</a>
+</p>
+
+<script src="~/js/Regists.js" asp-append-version="true"></script>

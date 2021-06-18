@@ -4,68 +4,22 @@ using Examen1_REmpleados.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Examen1_REmpleados.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210617235733_CreacionInicial")]
+    partial class CreacionInicial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Examen1_REmpleados.Models.Regist", b =>
-                {
-                    b.Property<int>("RegistId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("RegistApellido")
-                        .IsRequired()
-                        .HasMaxLength(70)
-                        .HasColumnType("nvarchar(70)");
-
-                    b.Property<string>("RegistApodo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RegistCPostal")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RegistCelular")
-                        .HasColumnType("int");
-
-                    b.Property<string>("RegistDireccion")
-                        .IsRequired()
-                        .HasMaxLength(70)
-                        .HasColumnType("nvarchar(70)");
-
-                    b.Property<string>("RegistEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RegistFax")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RegistNombre")
-                        .IsRequired()
-                        .HasMaxLength(70)
-                        .HasColumnType("nvarchar(70)");
-
-                    b.Property<string>("RegistObsrvaciones")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RegistTelefono")
-                        .HasColumnType("int");
-
-                    b.HasKey("RegistId");
-
-                    b.ToTable("Registros");
-                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
